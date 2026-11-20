@@ -37,3 +37,9 @@ Cada decisión importante, con fecha y por qué se tomó. Lo más nuevo va abajo
 12. **La clasificación de mercado (poco explotado / emergente / oferta deficiente / saturado) se calcula con reglas en código**, no la decide la IA, porque alimenta el puntaje y tiene que dar siempre lo mismo.
 
 13. **Gastos que faltan no se inventan.** El costo y el margen se calculan con lo que se conoce y la ficha lista lo que falta ("faltantes"). Si falta un dato clave (precio del proveedor o precio local), el resultado queda desconocido.
+
+14. **Umbrales del puntaje (versión `v1-2026-11-20`)** escritos en `buscador/puntaje.py`. Ejemplos: más de 10.000 pedidos = señal fuerte; 5 vendedores o menos en ML = poco explotado; más de 20 = saturado (salvo quejas de calidad: oferta deficiente). Son un punto de partida para calibrar con las fichas de la Fase 0 y la prueba hacia atrás.
+
+15. **Consecuencia buscada: mientras las alícuotas sigan como "estimado", ningún producto llega a confianza alta**, porque el margen hereda el estado de su dato menos confiable. Para destrabarlo hay que confirmar las alícuotas con un despachante y marcarlas "verificado".
+
+16. **Si no se buscó en Mercado Libre Argentina, no cuentan las ventas de ML** (se encontró y corrigió al revisar el ejemplo).

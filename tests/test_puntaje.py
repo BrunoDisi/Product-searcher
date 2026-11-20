@@ -75,6 +75,11 @@ def test_sin_busqueda_en_ml_tope_8_y_confianza_baja():
     assert r.confianza == "baja"
 
 
+def test_sin_busqueda_en_ml_no_cuentan_ventas_de_ml():
+    ev = replace(producto_ideal(), ml_buscado=desconocido(), busquedas_locales=v(False))
+    assert puntos(calcular_puntaje(ev, HOY), "Oportunidad") == 0
+
+
 def test_ausente_en_ml_sin_revisar_barreras_tope_8():
     ev = replace(producto_ideal(), vendedores_ml=v(0), quejas_calidad_ml=v(False),
                  ventas_visibles_ml=v(0), barreras_revisadas=desconocido("Revisar barreras"))

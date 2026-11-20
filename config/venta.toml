@@ -43,4 +43,4 @@ nota = "Porcentaje del precio que pensás invertir en publicidad (ej. 0.05 = 5%)
 
 [iibb_venta]
 estado = "desconocido"
-nota = "Ingresos brutos sobre la venta: depende de tu provincia. Consultar con contador."
+nota = "Depende de tu provincia. Consultar con contador."

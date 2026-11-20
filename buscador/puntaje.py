@@ -189,7 +189,7 @@ def puntuar_oportunidad(ev: Evaluacion) -> ResultadoCriterio:
     base = {POCO_EXPLOTADO: 16, EMERGENTE: 13, OFERTA_DEFICIENTE: 17, SATURADO: 3, SIN_CLASIFICAR: 0}
     c.puntos = base[clasificacion]
     c.motivos.append(f"Mercado: {clasificacion} → {c.puntos} pts.")
-    if (_valor(ev.ventas_visibles_ml) or 0) > 0:
+    if buscado and (_valor(ev.ventas_visibles_ml) or 0) > 0:
         c.puntos += 5
         c.motivos.append("Hay ventas visibles en ML Argentina → +5.")
     if _valor(ev.busquedas_locales) is True:
