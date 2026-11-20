@@ -1,0 +1,46 @@
+# Supuestos de VENTA en Argentina. Todo editable.
+# Estados posibles: "verificado", "estimado", "desconocido".
+# Si el estado es "desconocido", no se pone valor.
+
+# Tu situación fiscal: "responsable_inscripto" o "monotributista".
+# (Valor por defecto, pendiente de confirmar: ver DISENO.md sección 9.)
+situacion_fiscal = "responsable_inscripto"
+
+# Canal de venta. Por ahora solo "mercadolibre".
+canal = "mercadolibre"
+
+[tipo_cambio_ars_por_usd]
+# Completar: dólar oficial vendedor del Banco Nación del día.
+# Ejemplo: valor = 1500.0 / estado = "verificado" / fuente = "BNA" / fecha = 2026-11-20
+estado = "desconocido"
+nota = "Completá con el dólar oficial vendedor del BNA y la fecha del día."
+
+[comision_ml]
+valor = 0.15
+estado = "estimado"
+fuente = "DISENO.md: aprox. 12% a 17% según categoría y tipo de publicación"
+fecha = 2026-11-15
+nota = "El valor real por categoría se obtiene de la API 'costos por vender' de ML (Etapa 3)."
+
+[iva_sobre_comision]
+valor = 0.21
+estado = "estimado"
+fuente = "DISENO.md: ML cobra IVA sobre su comisión"
+fecha = 2026-11-15
+nota = "Para responsable inscripto es crédito fiscal; para monotributista, costo."
+
+[costo_fijo_ml_ars]
+estado = "desconocido"
+nota = "ML cobra un costo fijo por unidad en productos de bajo precio. Ver la tabla vigente en ML."
+
+[envio_ars]
+estado = "desconocido"
+nota = "Costo de envío por unidad que pagás vos (por ej. envío gratis en ML). Cotizar en ML según peso."
+
+[publicidad]
+estado = "desconocido"
+nota = "Porcentaje del precio que pensás invertir en publicidad (ej. 0.05 = 5%). Lo definís vos."
+
+[iibb_venta]
+estado = "desconocido"
+nota = "Ingresos brutos sobre la venta: depende de tu provincia. Consultar con contador."
