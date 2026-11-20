@@ -1,0 +1,83 @@
+# Importación FORMAL (no courier: el courier es solo para uso personal).
+#
+# IMPORTANTE: las leyes y alícuotas cambian. Todo lo de este archivo está
+# "a confirmar con fuente oficial (ARCA) o con un despachante de aduana".
+# Cuando confirmes un valor: cambiá estado a "verificado", poné la fuente
+# real y la fecha en que lo confirmaste.
+#
+# Estados posibles: "verificado", "estimado", "desconocido".
+# Si el estado es "desconocido", no se pone valor.
+
+fecha_ultima_verificacion = 2026-11-15
+
+# --- Tributos que se pagan en la aduana (porcentajes en decimal: 0.03 = 3%) ---
+
+[tasa_estadistica]
+valor = 0.03
+estado = "estimado"
+fuente = "DISENO.md, investigación nov 2026 (no consultado directo en ARCA)"
+fecha = 2026-11-15
+a_confirmar = true
+nota = "Base: valor CIF. Puede tener tope y excepciones; confirmar con despachante."
+
+[iva]
+valor = 0.21
+estado = "estimado"
+fuente = "DISENO.md, investigación nov 2026"
+fecha = 2026-11-15
+a_confirmar = true
+nota = "Alícuota general. Algunos productos tienen 10,5%. Base: CIF + derecho + tasa de estadística."
+
+[iva_adicional]
+valor = 0.20
+estado = "estimado"
+fuente = "DISENO.md, investigación nov 2026 (percepción de IVA adicional)"
+fecha = 2026-11-15
+a_confirmar = true
+nota = "Percepción a cuenta. Puede ser 10% para bienes con IVA 10,5%. Misma base que el IVA."
+
+[percepcion_ganancias]
+valor = 0.06
+estado = "estimado"
+fuente = "DISENO.md, investigación nov 2026"
+fecha = 2026-11-15
+a_confirmar = true
+nota = "Pago a cuenta. Puede ser mayor si no estás inscripto en Ganancias. Misma base que el IVA."
+
+[percepcion_iibb]
+# Sin valor: no está en DISENO.md y depende de la jurisdicción.
+estado = "desconocido"
+a_confirmar = true
+nota = "Consultar al despachante: depende de tu provincia (régimen de percepción en aduana)."
+
+# --- Derecho de importación ---
+# El real depende del NCM de cada producto (0% a 35%). Se carga por producto.
+# Si un producto no tiene NCM, se usa este supuesto conservador (el máximo)
+# y el costo queda como "estimado".
+
+[derecho_supuesto_sin_ncm]
+valor = 0.35
+estado = "estimado"
+fuente = "Supuesto conservador: tope máximo del Arancel Externo Común (DISENO.md: 0 a 35%)"
+fecha = 2026-11-15
+a_confirmar = true
+nota = "Consultar el NCM real en el Arancel Integrado de ARCA o con despachante."
+
+# --- Qué es costo y qué es crédito según tu situación fiscal ---
+# "costo": se pierde (suma al costo del producto).
+# "credito": se paga en aduana pero se recupera después (no suma al costo,
+#            pero sí necesitás tener la plata al momento de importar).
+# "no_aplica": no se cobra.
+
+[tratamiento.responsable_inscripto]
+iva = "credito"
+iva_adicional = "credito"
+percepcion_ganancias = "credito"
+percepcion_iibb = "credito"
+
+[tratamiento.monotributista]
+# A CONFIRMAR con contador: tratamiento simplificado y conservador.
+iva = "costo"
+iva_adicional = "no_aplica"
+percepcion_ganancias = "costo"
+percepcion_iibb = "costo"

@@ -1,0 +1,13 @@
+# Claves y secretos: NUNCA a git
+.env
+
+# Base de datos y salidas generadas
+datos/*
+!datos/.gitkeep
+
+# Python
+__pycache__/
+*.pyc
+.pytest_cache/
+.venv/
+venv/

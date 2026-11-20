@@ -1,0 +1,55 @@
+# Categorías para el modo "por categoría".
+# Para agregar una, copiá un bloque [[categoria]] y cambiá id y nombre.
+# id: sin espacios ni acentos (se usa internamente). nombre: como lo querés ver.
+
+[[categoria]]
+id = "tecnologia"
+nombre = "Tecnología"
+
+[[categoria]]
+id = "hogar_decoracion"
+nombre = "Hogar y decoración"
+
+[[categoria]]
+id = "cocina"
+nombre = "Cocina"
+
+[[categoria]]
+id = "organizacion"
+nombre = "Organización"
+
+[[categoria]]
+id = "mascotas"
+nombre = "Mascotas"
+
+[[categoria]]
+id = "fitness"
+nombre = "Fitness"
+
+[[categoria]]
+id = "belleza"
+nombre = "Belleza"
+
+[[categoria]]
+id = "autos"
+nombre = "Autos"
+
+[[categoria]]
+id = "herramientas"
+nombre = "Herramientas"
+
+[[categoria]]
+id = "bebes"
+nombre = "Bebés"
+
+[[categoria]]
+id = "accesorios"
+nombre = "Accesorios"
+
+[[categoria]]
+id = "camping"
+nombre = "Camping"
+
+[[categoria]]
+id = "innovadores"
+nombre = "Innovadores"

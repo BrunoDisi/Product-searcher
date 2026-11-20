@@ -1,0 +1,2 @@
+# Librerías del proyecto (todas gratuitas)
+pytest>=8
